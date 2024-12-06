@@ -1,0 +1,24 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules
+Component,A high-level attribute grouping variable.,,,,TRUE,,,,
+Filename,Name of a file,,,,,,,,
+File Format,Standard file format name or file extension,"csv, tsv, txt, xlsx, xls, fcs, docx, erate, rec, info, vcf, dose, tbi, fam, bim, bed, bam, h5, mtx, bai, rds, pdf, tgz, zip, fastq, parquet, geojson, tar.gz, zip",,,,,,,
+Clinical Metadata,Clinical data about each study participant,,"Component, Subject ID, Visit ID",,,Clinical,,,
+Biospecimen Metadata,Metadata about biospecimens collected from study subjects,,"Component, Subject ID, Visit ID, psid, Child PSID, Slide PSID",,,,,,
+Patient,Patient Component,,"Component, Subject ID",,,Individual Organism,Clinical,,
+Biospecimen,A patient biological sample,,"Component, psid",,,Biosample,Patient,,
+Clinical,Clinical Component,,"Component, Subject ID, Visit ID",,,,,,
+Subject ID,"Unique identifier assigned to each study participant. Combination of disease team, site ID, and 3-digit ID",,,,TRUE,Patient,,https://docs.google.com/document/d/1-FeZFIVALNdGkiXpn7zRfzVCwK00KnI5/edit,regex search [4-7][0-9]{2}-[0-9]{3} error
+Visit ID,ID associated with specific type of patient visit,,,,TRUE,Clinical,,https://docs.google.com/document/d/1-FeZFIVALNdGkiXpn7zRfzVCwK00KnI5/edit,regex search ^V0[0-9]|^VA[1-9]|^VE[1-9]|^VC[1-9] error
+Project Sample ID,"Project Sample ID, aka PSID, is a unique biospecimen identifier, the format can vary depending on the specimen or container type.",,,,TRUE,Biospecimen,,https://docs.google.com/document/d/1-FeZFIVALNdGkiXpn7zRfzVCwK00KnI5/edit,regex search [0-9]{10}|[0-9]{15}|^K[0-9]{4}-[1-9][0-9]{3}
+Resource Type,High level classification of a file’s content,"experimentalData, metadata, code",,,TRUE,,,,
+Biospecimen Type,,"none, urine, stool, whole blood, serum, plasma, PBMC, total leukocytes, kidney biopsy, synovial fluid, skin biopsy, salivary gland, saliva, skin swab, synovial tissue",,,TRUE,,,,
+Metadata Type,,,,,,,,,
+metadata,,,MetadataType,,,,,,
+Assay,The technology used to generate the data in this file,"Olink, CyTOF, scRNAseq, RNAseq, CITEseq",,,,,,,
+Data Type,"High-level classification of the type of experimental data, select all that apply",,,,,,,,
+Data Level,The processing level of the data as defined for the SDP,,,,,,,,
+Platform,"The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment. Please specify for level 1 experimentalData files, else enter 'none'",,,,,,,,
+Software and Version,Relevant software and version used to generate the data file.,,,,,,,,
+Experimental Data,,,"Specimen Modality, Assay, Data Level, Data Type",,,,,,
+Specimen Modality,Label assigned to experimental data files indicating whether the data contained corresponds to a single or multiple biospecimens,"singleSpecimen, multiSpecimen",,,,,,,
+SDP Test Template,A component for use as a mock template for defining file annotation metadata for an SDP.,,"Component, Filename, File Format, Resource Type",,,,,,
