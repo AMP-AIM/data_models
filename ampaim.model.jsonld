@@ -223,7 +223,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Sample Manifest SynID",
-            "sms:required": "sms:true",
+            "sms:required": "sms:false",
             "sms:validationRules": [
                 "regex search ^syn[0-9]{8} error"
             ]
@@ -284,6 +284,9 @@
             "schema:rangeIncludes": [
                 {
                     "@id": "bts:MDIPA"
+                },
+                {
+                    "@id": "bts:None"
                 }
             ],
             "sms:displayName": "Target Panel",
@@ -304,7 +307,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Target Panel SynID",
-            "sms:required": "sms:true",
+            "sms:required": "sms:false",
             "sms:validationRules": [
                 "regex search ^syn[0-9]{8} error"
             ]
@@ -1250,6 +1253,9 @@
                     "@id": "bts:BiospecimenType"
                 },
                 {
+                    "@id": "bts:TargetPanel"
+                },
+                {
                     "@id": "bts:DataSubtype"
                 },
                 {
@@ -1895,7 +1901,7 @@
             "sms:displayName": "Assay",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "list strict error"
+                "list like error"
             ]
         },
         {
@@ -2380,7 +2386,7 @@
             "sms:displayName": "Data Type",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "list strict error"
+                "list like error"
             ]
         },
         {
@@ -2623,7 +2629,7 @@
             "sms:displayName": "Data Subtype",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "list strict error"
+                "list like error"
             ]
         },
         {
@@ -2890,7 +2896,7 @@
             "sms:displayName": "Platform",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "list strict error"
+                "list like error"
             ]
         },
         {
