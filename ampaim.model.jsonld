@@ -71,7 +71,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "filename",
+            "sms:displayName": "Filename",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
